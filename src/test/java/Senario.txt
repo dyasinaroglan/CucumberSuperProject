@@ -1,0 +1,31 @@
+Adress        : https://brandstore.e-shopland.ch/
+Kullanici     : kursjava@gmail.com
+Sifre         : kurs.java.123
+
+
+*    Ana sayfada bütün resimler tanimli mi?
+*    Dogru kullanici ve sifre ile giris yapilabiliyor mu?
+*    Menü : Tüm Ürünler
+    a.    Tüm ürünlerin resimleri ve fiyat bilgileri var mi
+    b.    sol tarafta bulunan kategoriler dropdown calisiyor mu?
+    c.    Sag üst tarafta bulunan siralama islemi düzgün calisiyor mu?
+    d.    Ürün filtreleme düzgün calisiyor mu?
+*    Favorilere ürün eklenip, kaldirilabiliyor mu?
+*    Enson tiklanan ürün sol kategoriler altinda bulunan "Son görüntülenenler" kisminda listeleniyor mu?
+*    Arama fonksiyonu düzenli calisiyor mu? (Menü kisminda ve sayfanin sol alt kismindaki form)
+*    Ürün karsilastirmasi yapilabiliyor mu?
+*    Ürünler sepete dogru bilgiler ile eklenebiliyor mu?
+*    Sepette gücelleme islemi yapilabiliyor mu?
+*    Ürün satin alinabiliyor mu? (Ödemeyi kredi karti secenegi ile yapin, Kayitli Demo bir Kredi karti var)
+*    Bir ürün satin alin ve bu ürünün siparisler bölümünde listelendigini onaylayin.
+
+
+Proje:
+    1.    Cucumber ile yapilacak.
+    2.    Log kaydi tutulacak (Text ve excel)
+    3.    Rapor alinacak
+    4.    Scrum uygulanacak
+    5.    1 haftalik sprint planlanacak
+    6.    Sprint planlama toplantisi yapilacak
+    7.    Daily stand-up'lar yapilacak
+    8.    Sprint degerlendirme toplantisi yapilacak
