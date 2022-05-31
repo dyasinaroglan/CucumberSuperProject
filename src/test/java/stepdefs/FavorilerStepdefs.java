@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.bouncycastle.est.LimitedSource;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.ParentClass;
@@ -28,9 +29,12 @@ public class FavorilerStepdefs extends ParentClass {
     @And("favori listesinin görüntülenmesi ve bunun Assert edilmesi")
     public void favoriListesininGörüntülenmesiVeBununAssertEdilmesi() {
         sleepTo(1000);
+
+        sleepTo(2000);
         clickTo(lFavoriButton);
-        sleepTo(1000);
-        clickTo(lÜrünListesiGörüntüle);
+        sleepTo(4000);
+        WebElement element = driver.findElement(lÜrünListesiGörüntüle);
+        element.click();
 
         String actualUrün = driver.findElement(lactualÜrün).getText();
         String expectedUrün = driver.findElement(lexpectedÜrün).getText();
@@ -41,6 +45,30 @@ public class FavorilerStepdefs extends ParentClass {
 
     @Then("Favori listesine eklenen ürünün kaldırılması")
     public void favoriListesineEklenenÜrününKaldırılması() {
+        sleepTo(2000);
+        clickTo(lKaldırButton);
+    }
 
+    @When("menuBarda yer alan Arama butonuna tıklayınız")
+    public void menubardaYerAlanAramaButonunaTıklayınız() {
+        sleepTo(1000);
+        clickTo(lCookies);
+        clickTo(lAramaButonu);
+    }
+
+    @And("arama butonuna ürün ismi girilir")
+    public void aramaButonunaÜrünIsmiGirilir() {
+        sleepTo(1000);
+        sendKeysTo(lAramaText, "Bracelet" + Keys.ENTER);
+    }
+
+    @Then("Arama sayfasının görüntülenmesi")
+    public void aramaSayfasınınGörüntülenmesi() {
+        List<WebElement> list = driver.findElements(lÜRrünlerListesi);
+        //aranan text ile liste içindeki textlerin karşılaştırılması
+        for (WebElement i : list) {
+            Assert.assertTrue(i.getText().contains("Bracelet"));
+
+        }
     }
 }
