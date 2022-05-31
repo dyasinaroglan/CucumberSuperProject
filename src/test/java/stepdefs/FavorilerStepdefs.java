@@ -71,4 +71,12 @@ public class FavorilerStepdefs extends ParentClass {
 
         }
     }
+
+    @When("sol altta yer alan arama butonuna gelip ürün arattırınız")
+    public void solAlttaYerAlanAramaButonunaGelipÜrünArattırınız() {
+        scrollIntoView(driver.findElement(lAramaButonu2));
+        sleepTo(1000);
+        sendKeysTo(lAramaButonu2,"Bracelet"+Keys.ENTER);
+        sleepTo(1000);
+    }
 }

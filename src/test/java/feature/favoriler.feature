@@ -11,7 +11,13 @@ Feature: Favori ürün ekleme çıkarma
       Then Favori listesine eklenen ürünün kaldırılması
 
 
-      Scenario: Arama butonları
+      Scenario: Arama butonları1
         When menuBarda yer alan Arama butonuna tıklayınız
         And arama butonuna ürün ismi girilir
         Then Arama sayfasının görüntülenmesi
+
+
+        Scenario: Arama butonları2
+        When sol altta yer alan arama butonuna gelip ürün arattırınız
+          Then Arama sayfasının görüntülenmesi
+

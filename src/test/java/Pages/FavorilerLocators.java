@@ -19,4 +19,6 @@ public interface FavorilerLocators {
     By lAramaText = By.cssSelector("input[class='search-field']");
     By lCookies = By.cssSelector("a[class='woocommerce-store-notice__dismiss-link']");
     By lÜRrünlerListesi = By.cssSelector("h2[class='entry-title']");
+
+    By lAramaButonu2 = By.cssSelector("input[id='wp-block-search__input-1']");
 }
