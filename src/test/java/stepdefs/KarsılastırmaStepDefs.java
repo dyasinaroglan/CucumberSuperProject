@@ -57,11 +57,11 @@ public class KarsılastırmaStepDefs extends ParentClass {
     public void ürünlerinKarşılaştırılması() {
         driver.switchTo().frame(0);
         List<WebElement> frameList = driver.findElements(iFrameProducts);
-        for (WebElement element : frameList) {
-            Assert.assertTrue(element.getText().contains(list.get(option).getText()));
+        for (int i = 0; i < frameList.size(); i++) {
+            Assert.assertTrue(frameList.get(0).getText().contains(list.get(option).getText()) && frameList.get(1).getText().contains(list.get(option).getText()));
 
         }
-
+        driver.switchTo().defaultContent();
     }
 }
 
