@@ -3,7 +3,6 @@ package stepdefs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -44,21 +43,28 @@ public class FiltrelemeStepDefs extends ParentClass {
     public void ürünFiyatlarınınFiltrelenenRakamlarArasındaOlduğununTestEdilmesi() {
 
         String priceText = driver.findElement(lPrice).getText();
-        String price = priceText.replaceAll("[^0-9—]", "");
+            String price = priceText.replaceAll("[^0-9—]", "");
+        System.out.println(priceText);
 
         String[] price1 = price.split("—"); //price1[0] = min, price1[1] = max iki tane değerimiz oldu
+        System.out.println("price1[0] = " + price1[0]);
+        System.out.println("price1[1] = " + price1[1]);
         clickTo(lFiltreleSubmit1);
 
-        List<WebElement> list = driver.findElements(lAllProducts);
+        List<WebElement> list = driver.findElements(lAllProducts); //ürünlerin fiyatlarının listesini almış oldum
+
         List<String> priceListS = new ArrayList<>();
         List<Double> priceListD = new ArrayList<>();
+
         for (WebElement element : list) {
              priceListS.add(element.getText().replaceAll("[^0-9.]", ""));
         }
         for (String i : priceListS) {
             priceListD.add(Double.parseDouble(i));
         }
-        Assert.assertTrue(Double.parseDouble(price1[0]) <= priceListD.get(0) && Double.parseDouble(price1[1]) >= priceListD.get(0));
+        for (Double aDouble : priceListD) {
+            Assert.assertTrue(Double.parseDouble(price1[0]) <= priceListD.get(0) && Double.parseDouble(price1[1]) >= priceListD.get(priceListD.size()-1));
+        }
 
     }
 
